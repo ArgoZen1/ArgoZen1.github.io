@@ -7,42 +7,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ohmyfood</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
 </head>
 <body>
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>    
     <header>
         <h1>ohmyfood</h1>
-        <div>
+        <div class="headerFirstBlock">
             <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
             <p>Paris, Belleville</p>
          </div>
-        <h2>
-            Réservez le menu qui vous convient
-        </h2>
+         <div class="HeaderSecondBlock">
+            <h3>Réservez le menu qui vous convient
+        </h3>
         <p>Découvrez des restaurants d'exception, séléctionnés par nos soins</p>
         <button>Explorer nos restaurants</button>
+    </div>
     </header>
     <section class="functioning">
-        <h2>Fonctionnement</h2>
+        <h3>Fonctionnement</h3>
         <div>
-            <p>1</p>
+            <p class="number">1</p>
             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
             <p>Choisissez un restaurant</p>
          </div>
         <div>
-            <p>2</p>
+            <p class="number">2</p>
             <i class="fa fa-list-ul" aria-hidden="true"></i>
             <p>Composez votre menu</p>
          </div>
         <div>
-            <p>3</p>
+            <p class="number">3</p>
             <i class="fas fa-store" aria-hidden="true"></i>
             <p>Dégustez au restaurant</p>
         </div>
     </section>
     <main>
-        <section class="restaurant">
-            <h2>restaurant</h2>
+        <section class="restaurants">
+            <h3 class="titleRestaurants">Restaurants</h3>
             <article class="card">
+                <div class="new">Nouveau</div>
                 <div class="card-image">
                     <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût,restaurant">
                 </div>
@@ -54,11 +62,14 @@
                     <p>Ménilmontant</p>
                 </div>
                 <div class="card-icon">
+                    <input type="checkbox">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
                     <i class="far fa-heart" aria-hidden="true"></i>
                 </div>
                 </div>
             </article>
             <article class="card">
+                <div class="new">Nouveau</div>
                 <div class="card-image">
                     <img src="images/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée,restaurant">
                 </div>
@@ -70,6 +81,8 @@
                     <p>Charonne</p>
                 </div>
                 <div class="card-icon">
+                    <input type="checkbox">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
                     <i class="far fa-heart" aria-hidden="true"></i>
                 </div>
                 </div>
@@ -86,6 +99,8 @@
                     <p>Cité Rouge</p>
                 </div>
                 <div class="card-icon">
+                    <input type="checkbox">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
                     <i class="far fa-heart" aria-hidden="true"></i>
                 </div>
                 </div>
@@ -102,6 +117,8 @@
                     <p>Folie-Méricourt</p>
                 </div>
                 <div class="card-icon">
+                    <input type="checkbox">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
                     <i class="far fa-heart" aria-hidden="true"></i>
                 </div>
                 </div>
@@ -109,7 +126,7 @@
         </section>
     </main>
     <footer>
-        <h2 class="Logo">ohmyfood</h2>
+        <div><h2 class="Logo">ohmyfood</h2>
         <ul>
             <li><a href="#"><i class="fas fa-utensils" aria-hidden="true"></i>
             Proposer un restaurant</a></li>
@@ -117,7 +134,7 @@
             Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li> 
             <li><a href="#">Contact</a></li> 
-        </ul>            
+        </ul></div>            
     </footer>
 </body>
 </html>

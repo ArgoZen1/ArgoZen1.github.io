@@ -1,0 +1,26 @@
+@mixin button {
+    padding: 17px 25px 17px 25px;
+    border-radius: 30px;
+    background: linear-gradient($secondary, $primary);
+    color: white;
+    border: none;
+    box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+    font-size: 1.2rem;
+}
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+@mixin footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    line-height : 30px;
+    h2 {
+        color: white;
+        font-weight: 500;
+    }
+    div {
+        margin-left: 35px
+    }
+}

@@ -1,5 +1,276 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Shrikhand&display=swap');
-h1 {
-    font-family: 'Shrikhand';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Shrikhand&display=swap');
+@import "libs/mixins.scss";
+@import "libs/responsive.scss";
+
+$primary: #9356DC;
+$secondary: #FF79DA; 
+$tertiary: #99E2D0;
+
+.loader {
+    position: fixed; //on fixe le loader par rapport au fond
+    height: 100%; // pour que ça prenne toute la page (width + height)
+    width: 100%;
+    display: flex;
+    justify-content: center; // on utilise flexbox pour centrer l'élément 
+    align-items: center;
+    animation: loader; // on ajoute une animation avec la règle keyframe 
+    animation-delay: 2s; // l'animation va durer 2 secondes en début de page
+    animation-fill-mode: both; // l'animation va disparaître à la fin
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 30;  // Pour que l'animation apparaisse bien au dessus de tous les éléments 
 }
+.circle {
+    width: 200px; // on fixe une taille à notre div
+    height: 200px;
+    border: 0px solid transparent; //on lui met une bordure  
+    border-radius: 50%; // le carré est maintenant un cercle
+    position: absolute; // pour que les éléments se positionnent les uns sur les autres   
+}
+.circle:nth-child(1) { // on utilise "nth-child" pour cibler un seul élément 
+    border-bottom-width: 8px; // on fixe une taille sur la bordure du bas
+    border-color: $secondary; // on ajoute une couleur à cette bordure
+    animation: rotate1 2s linear infinite; // l'animation a lieu sans temps d'arrêt 
+}
+.circle:nth-child(2) {
+    border-right-width: 8px;
+    border-color: $primary;
+    animation: rotate2 2s linear infinite;
+}
+.circle:nth-child(3) {
+    border-top-width: 8px;
+    border-color: $tertiary;
+    animation: rotate3 2s linear infinite;
+}
+@keyframes loader { // à la fin de l'animation 
+    100% {
+        opacity: 0; // pour que le loader disparaisse 
+        z-index: -5; // Pour que celui-ci passe en dessous des éléments de la page
+    }
+}
+@keyframes rotate1 { // Pour que l'animation passe de 0 à 360 deg 
+    0% {
+       transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);  
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); 
+    }
+}
+@keyframes rotate2 {
+    0% {
+       transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);  
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); 
+    }
+}
+@keyframes rotate3 {
+    0% {
+       transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);  
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); 
+    }
+}
+body {
+    font-family: 'Roboto';
+}
+h1, h2 {
+    font-family: 'Shrikhand';    
+}
+ul {
+    padding-left: 0;
+    li {
+        list-style-type: none;
+    }
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.headerFirstBlock {
+    display: flex;
+    align-items: center;
+    background-color: #eaeaea;
+    justify-content: center;
+    box-shadow : inset 0px 5px 5px -5px  rgb(165, 162, 162);
+    color: #4b4b4b;
+    font-weight: bold;
+    i {
+       margin-right: 13px;
+    }    
+}
+header  {
+    @include flexColumn;
+    text-align: center;          
+}
+.HeaderSecondBlock {
+    @include flexColumn;
+    align-items: center;
+    background-color: #f6f6f6;
+    // border: solid 2px black;
+    padding: 30px 35px 60px 35px; /* haut | droit | bas | gauche */
+    button {
+        @include button;
+        margin-top: 10px;
+        &:hover {
+            filter: brightness(1.1);
+            box-shadow: 4px 4px 10px rgb(0 0 0 / 45%);
+        }      
+    }
+    h3 {
+        font-size: 27px;
+        // border: solid 2px black;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    p {
+        font-size: 17px;
+        color: rgb(80, 78, 78);
+        // border: solid 2px black;
+    }   
+}
+.functioning {
+    @include flexColumn;
+    align-items: flex-start;
+    padding: 40px;
+    h3 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        background-color: #f6f6f6;
+        margin-bottom: 20px;
+        // border: solid 2px black;
+        width: 100%;
+        padding: 10px 0px 10px 0px; /* haut | droit | bas | gauche */
+        border-radius: 25px;
+        box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+        font-weight: bold;
+        &:hover {
+            background-color: #f5edff;
+            i {
+                color: $primary;
+            }
+        }
+        i {
+            padding: 0 10px 0 10px;
+            margin-left: 15px;
+            color: #4b4b4b;
+        }
+        p {
+            margin-left: 15px;
+        }
+        .number {
+            background-color: $primary;
+            padding: 2px 6px 2px 6px;
+            border-radius: 100%;
+            color: white;
+            text-align: center;
+            margin-left: -10px;   
+        }        
+    }
+}
+.restaurants {
+    background-color: #f6f6f6;
+    padding: 2rem 2rem;
+    .card {
+        margin: 0px auto;
+        background-color: white;
+        box-shadow: 0px 5px 20px #999;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+        .new {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            z-index: 6;
+            background-color: $tertiary;
+            color: #30a386;
+            font-weight: bold;
+            border-radius: 2px;
+            padding: 8px 17px 8px 17px;/* haut | droit | bas | gauche */
+        }
+    }
+    .card-image {
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+    }
+    .card-image img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);   
+    }
+    .card-body {
+        display: flex;
+        height: 90px;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        box-sizing: border-box; 
+    }
+    .fas {
+        position: absolute;
+        opacity: 0; /** pour rendre visible le coeur seulement au click sur l'input **/
+        margin-top: 0.7px;
+        margin-left: 0.7px;
+        transition: 0.6s;
+        transform: scale(1.1);
+        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));/*ON DEFINI UN BACKGROUND*/
+        background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE*/
+        -webkit-background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE */
+        -webkit-text-fill-color: transparent;/*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT**/
+    } 
+    .card-icon {
+        padding: 5px;
+        font-size: 1.6rem;
+        margin-right: 15px;
+        position: relative;
+        input { /** On ajoute l'input pour que l'animation du coeur reste en place apres un click **/ 
+            position: absolute; /** on met l'input en position absolute pour le positionné sur le coeur **/
+            width: 2rem; /** On ajoute une taille pour que l'input prenne tout le coeur **/
+            height: 2rem;
+            opacity: 0; /** on ajoute une opacity de 0 pour faire disparaître l'input visuellement **/
+            cursor: pointer;
+            z-index: 3; /** on ajoute un z-index de 3 pour que celui-ci soit positionner au dessus du coeur pour ne pas gêner le click **/    
+        }
+        /*QUAND LA CHECKBOX EST CHECK*/
+        input:checked ~ .far {
+            transition-duration: 0.5s;
+            opacity: 0;
+        }  
+        /*QUAND LA CHECKBOX EST CHECK*/
+        input:checked ~ .fas{
+            transition-duration: 0.5s;
+            opacity: 1;
+        }     
+    }
+    h3 {
+        padding: 5px;
+        margin: 0 0 0 8px;/* haut | droit | bas | gauche */   
+    }
+    p {
+        padding: 7px;
+        margin: 0 0 0 8px;   
+    }
+    .titleRestaurants {
+        font-size: 25px;
+        padding: 15px;
+        margin: 0 0 10px -10px;
+    }
+}
+footer {
+    @include footer;
+}
+
+
+
 
