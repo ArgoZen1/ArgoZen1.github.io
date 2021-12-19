@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Shrikhand&display=swap');
 @import "libs/mixins.scss";
-@import "libs/responsive.scss";
+
 
 $primary: #9356DC;
 $secondary: #FF79DA; 
@@ -131,7 +131,6 @@ header  {
 }
 .functioning {
     @include flexColumn;
-    align-items: flex-start;
     padding: 40px;
     h3 {
         font-size: 20px;
@@ -243,12 +242,12 @@ header  {
             z-index: 3; /** on ajoute un z-index de 3 pour que celui-ci soit positionner au dessus du coeur pour ne pas gêner le click **/    
         }
         /*QUAND LA CHECKBOX EST CHECK*/
-        input:checked ~ .far {
+        input:checked ~ .far  {
             transition-duration: 0.5s;
             opacity: 0;
         }  
         /*QUAND LA CHECKBOX EST CHECK*/
-        input:checked ~ .fas{
+        input:checked ~ .fas {
             transition-duration: 0.5s;
             opacity: 1;
         }     
@@ -270,6 +269,8 @@ header  {
 footer {
     @include footer;
 }
+
+    
 
 
 

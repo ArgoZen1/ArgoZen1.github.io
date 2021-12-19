@@ -1,0 +1,32 @@
+@media screen and (min-width: 810px) {
+  button {
+    width: 400px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  main {
+    width: 70%;
+    left: 15%;
+    box-shadow: 0px 5px 20px #999;
+  }
+
+  .image2 {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .image4 {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .image5 {
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+/*# sourceMappingURL=media-pages.css.map */

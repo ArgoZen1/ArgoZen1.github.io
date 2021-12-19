@@ -24,3 +24,41 @@
         margin-left: 35px
     }
 }
+@mixin heart { 
+    .card-icon {
+        padding: 5px;
+        font-size: 1.6rem;
+        margin-right: 15px;
+        position: relative;
+        .fas {
+            position: absolute;
+            opacity: 0; /** pour rendre visible le coeur seulement au click sur l'input **/
+            margin-top: 0.7px;
+            margin-left: 0.7px;
+            transition: 0.6s;
+            transform: scale(1.1);
+            background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));/*ON DEFINI UN BACKGROUND*/
+            background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE*/
+            -webkit-background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE */
+            -webkit-text-fill-color: transparent;/*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT**/
+        }
+        input { /** On ajoute l'input pour que l'animation du coeur reste en place apres un click **/ 
+            position: absolute; /** on met l'input en position absolute pour le positionné sur le coeur **/
+            width: 2rem; /** On ajoute une taille pour que l'input prenne tout le coeur **/
+            height: 2rem;
+            opacity: 0; /** on ajoute une opacity de 0 pour faire disparaître l'input visuellement **/
+            cursor: pointer;
+            z-index: 3; /** on ajoute un z-index de 3 pour que celui-ci soit positionner au dessus du coeur pour ne pas gêner le click **/    
+        }
+        /*QUAND LA CHECKBOX EST CHECK*/
+        input:checked ~ .far  {
+            transition-duration: 0.5s;
+            opacity: 0;
+        }  
+        /*QUAND LA CHECKBOX EST CHECK*/
+        input:checked ~ .fas {
+            transition-duration: 0.5s;
+            opacity: 1;
+        }     
+    }
+}

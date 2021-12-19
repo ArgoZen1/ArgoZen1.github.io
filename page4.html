@@ -5,75 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>À la française</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="media-pages.css">
 </head>
 <body>
     <header>
-        <h1>ohmyfood</h1>
-        <img src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française,restaurant">
+        <div class="titleAndIcon">
+            <a href="Index.html">  
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>ohmyfood</h1>
+        </div>
+        <img class="image4" src="images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
     </header>
     <main>
-        <h2>À la française
-            <i class="far fa-heart" aria-hidden="true"></i></h2>
+        <div class="boxTitle"><h2>À la française</h2>
+            <div class="card-icon">
+                <input type="checkbox">
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <i class="far fa-heart" aria-hidden="true"></i>
+            </div>
+        </div>
         <section class="entries">
-            <p>ENTRÉES</p>
-            <div class="card-menu">
-                <div class="card-titleMenu">Tartare de poulpe acidulé</div>
-                <div class="card-text">Au zests d'orange</div>
-                <div class="card-price"><strong>25€</strong></div>
-            </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Velouté de légumes d'antan</div>
-                <div class="card-text">Carotte,panais,topinambour</div>
-                <div class="card-price"><strong>35€</strong></div>
-            </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Soupe à l'oignon</div>
-                <div class="card-text">Revisitée</div>
-                <div class="card-price"><strong>20€</strong></div>
-            </div>
+            <h3>ENTRÉES</h3>
+            <div class="description description0">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Tartare de poulpe acidulé</h4>
+                    <p class="card-text">Aux zests d'orange</p>
+                </div>
+                    <span class="card-price"><strong>25€</strong></span>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description1">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Velouté de légumes d'antan</h4>
+                    <p class="card-text">Carotte,panais,topinambour</p>
+                </div>
+                    <div class="card-price"><strong>35€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description2">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Soupe à l'oignon</h4>
+                    <p class="card-text">Revisitée</p>
+                </div>
+                    <div class="card-price"><strong>20€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
         </section>
         <section class="dishes">
-            <p>PLATS</p>
-            <div class="card-menu">
-                <div class="card-titleMenu">Coquilles Saint-Jacques</div>
-                <div class="card-text">Accompagné d'une purée de panais</div>
-                <div class="card-price"><strong>40€</strong></div>
-            </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Magret de canard</div>
-                <div class="card-text">Et parmantier de pommes de terres</div>
-                <div class="card-price"><strong>35€</strong></div>
-            </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Pigeonneau d'Ille-et-Vilaine</div>
-                <div class="card-text">Sur son lit de gnocchis aux légumes</div>
-                <div class="card-price"><strong>44€</strong></div>
-            </div>
+            <h3>PLATS</h3>
+            <div class="description description3">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Coquilles Saint-Jacques</h4>
+                    <p class="card-text">Accompagné d'une purée de panais</p>
+                </div>
+                    <div class="card-price"><strong>40€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description4">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Magret de canard</h4>
+                    <p class="card-text">Et parmentier de pommes de terres</p>
+                </div>
+                    <div class="card-price"><strong>35€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description5">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Pigeonneau d'Ille-et-Vilaine</h4>
+                    <p class="card-text">Sur son lit de gnocchis aux légumes</p>
+                </div>
+                    <div class="card-price"><strong>44€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
         </section>
         <section class="desserts">
-            <p>DESSERTS</p>
-            <div class="card-menu">
-                <div class="card-titleMenu">Pétales de violettes glacés</div>
-                <div class="card-text">Et purée de noisettes</div>
-                <div class="card-price"><strong>18€</strong></div>
+            <h3>DESSERTS</h3>
+            <div class="description description6">
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Pétales de violettes glacés</h4>
+                    <p class="card-text">Et purée de noisettes</p>
+                </div>
+                    <div class="card-price"><strong>18€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description7"> 
+                <input type="checkbox">
+                <div class="card-text">
+                    <h4 class="card-titleMenu">Fondant au chocolat</h4>
+                    <p class="card-text">Revisité</p>
+                </div>
+                    <div class="card-price"><strong>22€</strong></div>
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            <div class="description description8">
+                <input type="checkbox">
+            <div class="card-text">
+                <h4 class="card-titleMenu">MilleFeuille croustillant</h4>
+                <p class="card-text">Myrtilles et pâte d'amande</p>
             </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Fondant au chocolat</div>
-                <div class="card-text">Revisité</div>
-                <div class="card-price"><strong>22€</strong></div>
-            </div>
-            <div class="card-menu">
-                <div class="card-titleMenu">Millefeuille croustillant</div>
-                <div class="card-text">Myrtilles et pâte d'amande</div>
                 <div class="card-price"><strong>23€</strong></div>
+                <div class="icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
             </div>
         </section>
         <button>Commander</button>
     </main>
     <footer>
-        <h2 class="Logo">ohmyfood</h2>
+        <div><h2 class="Logo">ohmyfood</h2>
         <ul>
             <li><a href="#"><i class="fas fa-utensils" aria-hidden="true"></i>
             Proposer un restaurant</a></li>
@@ -81,7 +147,7 @@
             Devenir partenaire</a></li>
             <li><a href="#">Mentions légales</a></li> 
             <li><a href="#">Contact</a></li> 
-        </ul>            
+        </ul></div>            
     </footer>
 </body>
 </html>

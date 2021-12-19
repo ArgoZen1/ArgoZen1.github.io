@@ -144,7 +144,6 @@ header {
 .functioning {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 40px;
 }
 .functioning h3 {
@@ -243,7 +242,7 @@ header {
   transform: scale(1.1);
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   /*ON DEFINI UN BACKGROUND*/
-  background-clip: text;
+   background-clip: text;
   /*ON MET LE BACKGROUND SUR LE TEXTE*/
   -webkit-background-clip: text;
   /*ON MET LE BACKGROUND SUR LE TEXTE */

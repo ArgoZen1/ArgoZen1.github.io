@@ -1,0 +1,43 @@
+@media screen and (min-width:950px) {
+    header {
+        font-size: 1.5rem;
+    }
+    .functioning {
+        flex-direction: row;
+        align-items: center; 
+        div {
+            margin-left: 35px;
+            }
+    }
+    .restaurants {
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-direction: row;
+        .card {
+            width: 100%;
+            margin-left: 15px;
+            margin-top: 50px;
+        }
+        .card img {
+            width: 150%;
+            object-fit: cover;
+        }
+        .titleRestaurants {
+            position: absolute;
+            top:0;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+    .card-icon {
+        .fas {
+            z-index: 50;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    } 
+    }
