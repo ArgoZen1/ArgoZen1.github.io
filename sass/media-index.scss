@@ -3,7 +3,7 @@
         font-size: 1.5rem;
     }
     .functioning {
-        flex-direction: row;
+        flex-direction: row; // pour annuler le flex-direction: column
         align-items: center; 
         div {
             margin-left: 35px;
@@ -11,27 +11,26 @@
     }
     .restaurants {
         display: flex;
-        align-items: center;
-        position: relative;
-        flex-direction: row;
+        align-items: center; 
+        position: relative; // pour mettre le titre en position absolute et le faire passer au dessus des cartes
         .card {
-            width: 100%;
+            width: 100%; // pour que les cartes prennent toute la largeur du conteneur 
             margin-left: 15px;
             margin-top: 50px;
-        }
-        .card img {
+            img {
             width: 150%;
             object-fit: cover;
+            }
         }
         .titleRestaurants {
-            position: absolute;
+            position: absolute; 
             top:0;
         }
     }
     footer {
-        text-align: center;
+        text-align: center; 
     }
-    .card-icon {
+    .card-icon { // Pour que le coeur apparaisse au survol
         .fas {
             z-index: 50;
             cursor: pointer;

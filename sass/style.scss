@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Shrikhand&display=swap');
 @import "libs/mixins.scss";
 
-
 $primary: #9356DC;
 $secondary: #FF79DA; 
 $tertiary: #99E2D0;
@@ -87,11 +86,11 @@ a {
     text-decoration: none;
     color: white;
 }
-.headerFirstBlock {
-    display: flex;
+.headerFirstBlock { // Premier bloc (Paris,Belleville)
+    display: flex; // on aligne l'icone et "Paris,Belleville"
     align-items: center;
     background-color: #eaeaea;
-    justify-content: center;
+    justify-content: center; // pour centrer le texte au milieu du bloc
     box-shadow : inset 0px 5px 5px -5px  rgb(165, 162, 162);
     color: #4b4b4b;
     font-weight: bold;
@@ -99,49 +98,45 @@ a {
        margin-right: 13px;
     }    
 }
-header  {
+header  { // Du Titre ohmyfood jusqu'au bouton
     @include flexColumn;
     text-align: center;          
 }
-.HeaderSecondBlock {
+.HeaderSecondBlock { // du mot "Réservez" jusqu'au bouton
     @include flexColumn;
     align-items: center;
     background-color: #f6f6f6;
-    // border: solid 2px black;
     padding: 30px 35px 60px 35px; /* haut | droit | bas | gauche */
     button {
         @include button;
         margin-top: 10px;
         &:hover {
-            filter: brightness(1.1);
-            box-shadow: 4px 4px 10px rgb(0 0 0 / 45%);
+            filter: brightness(1.1); // pour éclaircir le bouton
+            box-shadow: 4px 4px 10px rgb(0 0 0 / 45%); // La couleur noire à 45% d'opacité
         }      
     }
-    h3 {
+    h3 { // Réservez le menu qui vous convient
         font-size: 27px;
-        // border: solid 2px black;
         margin-bottom: 0;
         margin-top: 0;
     }
     p {
         font-size: 17px;
         color: rgb(80, 78, 78);
-        // border: solid 2px black;
     }   
 }
-.functioning {
+.functioning { // Section "Fonctionnement"
     @include flexColumn;
     padding: 40px;
     h3 {
         font-size: 20px;
         margin-bottom: 30px;
     }
-    div {
+    div { // Les 3 blocs en dessous du titre Fonctionnement 
         display: flex;
         align-items: center;
         background-color: #f6f6f6;
         margin-bottom: 20px;
-        // border: solid 2px black;
         width: 100%;
         padding: 10px 0px 10px 0px; /* haut | droit | bas | gauche */
         border-radius: 25px;
@@ -182,11 +177,11 @@ header  {
         margin-bottom: 15px;
         overflow: hidden;
         position: relative;
-        .new {
+        .new { // bloc contenant le mot "Nouveau"
             position: absolute;
             right: 25px;
             top: 20px;
-            z-index: 6;
+            z-index: 6; // Pour qu'il se positionne au dessus de l'image dans la carte
             background-color: $tertiary;
             color: #30a386;
             font-weight: bold;
@@ -200,24 +195,27 @@ header  {
         overflow: hidden;
     }
     .card-image img {
+        min-height: 100%;
+        object-fit: cover;
         width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);   
     }
-    .card-body {
-        display: flex;
-        height: 90px;
+    .card-body { 
+        display: flex; 
+        height: 90px; // On met une hauteur pour que le coeur fonctionne avec flex-wrap: wrap
         flex-direction: column;
         justify-content: center;
         align-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        align-items: flex-start; 
+        flex-wrap: wrap; // Pour que le coeur se positionne à droite des elements
         box-sizing: border-box; 
     }
     .fas {
-        position: absolute;
+        overflow: hidden;
+        position: absolute; // pour mettre le coeur dans le deuxieme coeur
         opacity: 0; /** pour rendre visible le coeur seulement au click sur l'input **/
         margin-top: 0.7px;
         margin-left: 0.7px;

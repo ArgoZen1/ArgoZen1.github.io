@@ -5,7 +5,7 @@
 $primary: #9356DC;
 $secondary: #FF79DA; 
 $tertiary: #99E2D0;
-.titleAndIcon {
+.titleAndIcon {  // Titre et flèche 
     .fas {
         color: #4b4b4b;
         position: absolute;
@@ -26,7 +26,7 @@ main {
     padding-bottom: 5rem;
     
 }
-.boxTitle {
+.boxTitle { // Titre + coeur
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,13 +35,13 @@ main {
     }   
 }
 main {
-    section {
-        h3 {
+    section { // SECTION ENTREES + PLATS + DESSERTS
+        h3 { // TITRE + BARRE DU DESSOUS
             font-weight: 400;
             color: #4b4b4b;
             position: relative;
             padding-bottom: 5px;
-            &::after {
+            &::after { // on utilise after pour ajouter element après le titre et on lui met du style pour faire la barre du dessous
                 content: "";
                 width: 3rem;
                 height: 3px;
@@ -53,7 +53,7 @@ main {
         }
     }
 }
-.description {  
+.description {  // Cartes avec prix et description des menus 
     display: flex;
     background-color: white;
     justify-content: flex-end;
@@ -62,32 +62,32 @@ main {
     border-radius: 15px;
     box-shadow: 0px 5px 20px #999;
     opacity: 0; 
-    animation: animLoad 1.6s forwards;
-    input {
+    animation: animLoad 1.6s forwards; // Animation quand on arrive sur la page
+    input { // on donne une largeur et une hauteur à l'input pour que celui-ci remplisse toute la carte description
         appearance: none;
         width: 93%;
         height: 5.1rem;
         border-radius: 1rem;
-        position: absolute;
+        position: absolute; 
         left: 3.5%;
         cursor: pointer;
     } 
 }    
-    .icon {
+    .icon { // Icones des bannieres "description"
         width: 5rem;
-        margin-right: -5rem;
+        margin-right: -5rem; // pour qu'il ne soit plus visible à l'écran
         background-color: $tertiary;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; // on le centre sur l'axe X
+        align-items: center; // on le centre sur l'axe Y
         font-size: 1.5rem;
         color: white;
-        transition-duration: 0.6s;
+        transition-duration: 0.6s; 
         i {
             transition-duration: 0.6s;
         } 
     } 
-@for $i from 0 through 9 {
+@for $i from 0 through 9 { // On utilise une boucle pour l'apparition des bannieres 
     .description#{$i} {
         animation-delay: ($i * 0.2s);
     }    
@@ -95,22 +95,22 @@ main {
 @keyframes animLoad {
     0% {
         
-       opacity: 0;      
+       opacity: 0; // invisible avant l'animation      
     }
     100% {
         
-        opacity: 1;      
+        opacity: 1; // visible      
     }
 }
-input:checked ~ .icon {
+input:checked ~ .icon { // quand on clique sur l'input, l'icone repasser à une marge à droite de 0.
     margin-right: 0;
     transition-duration: 0.6s;
 }
-input:checked ~ .icon i {
+input:checked ~ .icon i { // pour le rotation de l'icone
     transform: rotate(360deg);
     transition-duration: 0.6s;
 }
-.card-price {
+.card-price { // on positionne le prix en bas avec align-item: center 
     display: flex;
     align-items: flex-end;
     margin-bottom: 15px; 
@@ -120,21 +120,21 @@ input:checked ~ .icon i {
 button {
     @include button;
     margin-top: 50px; 
-    width: 75%;
-    align-self: center;
+    width: 75%; 
+    align-self: center; // pour mettre le bouton au centre par rapport à son conteneur 
     &:hover {
-        filter: brightness(1.1);
+        filter: brightness(1.1); // pour éclaircir le bouton 
         box-shadow: 4px 4px 10px rgb(0 0 0 / 45%);
     }    
 }
 .card-text { 
-    width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    width: 100%; 
+    white-space: nowrap; // Pour que le texte ne revienne pas à la ligne quand il n'y a plus de place
+    text-overflow: ellipsis; // pour que les points apparaissent quand le texte deborde sur un element
     overflow: hidden;       
     h4{
         margin-left: 10px;    
-        text-overflow: ellipsis;
+        text-overflow: ellipsis; // pour que les points apparaissent quand le texte deborde sur un element
         overflow: hidden; 
         margin-bottom: 0; 
     }

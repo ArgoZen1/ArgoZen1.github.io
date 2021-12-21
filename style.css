@@ -216,6 +216,8 @@ header {
   overflow: hidden;
 }
 .restaurants .card-image img {
+  min-height: 100%;
+  object-fit: cover;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -233,6 +235,7 @@ header {
   box-sizing: border-box;
 }
 .restaurants .fas {
+  overflow: hidden;
   position: absolute;
   opacity: 0;
   /** pour rendre visible le coeur seulement au click sur l'input **/
@@ -242,7 +245,7 @@ header {
   transform: scale(1.1);
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   /*ON DEFINI UN BACKGROUND*/
-   background-clip: text;
+  background-clip: text;
   /*ON MET LE BACKGROUND SUR LE TEXTE*/
   -webkit-background-clip: text;
   /*ON MET LE BACKGROUND SUR LE TEXTE */

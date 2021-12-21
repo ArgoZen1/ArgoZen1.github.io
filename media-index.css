@@ -15,7 +15,6 @@
     display: flex;
     align-items: center;
     position: relative;
-    flex-direction: row;
   }
   .restaurants .card {
     width: 100%;
