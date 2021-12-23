@@ -125,6 +125,7 @@ header {
   border: none;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   font-size: 1.2rem;
+  cursor: pointer;
   margin-top: 10px;
 }
 .HeaderSecondBlock button:hover {
@@ -175,6 +176,12 @@ header {
 }
 .functioning div p {
   margin-left: 15px;
+}
+.functioning div .paddingP2 {
+  padding-right: 2px;
+}
+.functioning div .paddingP1 {
+  padding-right: 9px;
 }
 .functioning div .number {
   background-color: #9356DC;
@@ -308,6 +315,10 @@ footer h2 {
 }
 footer div {
   margin-left: 35px;
+}
+
+input:focus {
+  outline: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

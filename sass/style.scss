@@ -156,6 +156,12 @@ header  { // Du Titre ohmyfood jusqu'au bouton
         p {
             margin-left: 15px;
         }
+        .paddingP2 {
+            padding-right: 2px;
+        }
+        .paddingP1 {
+            padding-right: 9px;
+        }
         .number {
             background-color: $primary;
             padding: 2px 6px 2px 6px;
@@ -266,6 +272,9 @@ header  { // Du Titre ohmyfood jusqu'au bouton
 }
 footer {
     @include footer;
+}
+input:focus {
+    outline: 0;
 }
 
     
