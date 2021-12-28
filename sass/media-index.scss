@@ -1,9 +1,6 @@
 @media screen and (min-width:950px) {
-    header {
-        font-size: 1.5rem;
-    }
     .functioning {
-        flex-direction: row; // pour annuler le flex-direction: column
+        flex-direction: row; 
         align-items: center; 
         div {
             margin-left: 35px;
@@ -12,9 +9,9 @@
     .restaurants {
         display: flex;
         align-items: center; 
-        position: relative; // pour mettre le titre en position absolute et le faire passer au dessus des cartes
+        position: relative; 
         .card {
-            width: 100%; // pour que les cartes prennent toute la largeur du conteneur 
+            width: 100%; 
             margin-left: 15px;
             margin-top: 50px;
             img {
@@ -30,7 +27,7 @@
     footer {
         text-align: center; 
     }
-    .card-icon { // Pour que le coeur apparaisse au survol
+    .card-icon { 
         .fas {
             z-index: 50;
             cursor: pointer;

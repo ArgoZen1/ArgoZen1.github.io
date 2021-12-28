@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Shrikhand&display=swap");
 .loader {
   position: fixed;
@@ -90,17 +89,32 @@ a {
   color: white;
 }
 
+header h1 {
+  font-size: 3rem;
+}
+
 .headerFirstBlock {
   display: flex;
   align-items: center;
   background-color: #eaeaea;
   justify-content: center;
+  font-size: 1.5rem;
   box-shadow: inset 0px 5px 5px -5px #a5a2a2;
   color: #4b4b4b;
   font-weight: bold;
 }
-.headerFirstBlock i {
-  margin-right: 13px;
+.headerFirstBlock input {
+  width: 10rem;
+  border: none;
+  background: transparent;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 8px;
+}
+.headerFirstBlock input::placeholder {
+  color: #4b4b4b;
+  text-align: center;
 }
 
 header {
@@ -245,40 +259,28 @@ header {
   overflow: hidden;
   position: absolute;
   opacity: 0;
-  /** pour rendre visible le coeur seulement au click sur l'input **/
   margin-top: 0.7px;
   margin-left: 0.7px;
   transition: 0.6s;
   transform: scale(1.1);
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  /*ON DEFINI UN BACKGROUND*/
   background-clip: text;
-  /*ON MET LE BACKGROUND SUR LE TEXTE*/
   -webkit-background-clip: text;
-  /*ON MET LE BACKGROUND SUR LE TEXTE */
   -webkit-text-fill-color: transparent;
-  /*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT**/
 }
 .restaurants .card-icon {
   padding: 5px;
   font-size: 1.6rem;
   margin-right: 15px;
   position: relative;
-  /*QUAND LA CHECKBOX EST CHECK*/
-  /*QUAND LA CHECKBOX EST CHECK*/
 }
 .restaurants .card-icon input {
-  /** On ajoute l'input pour que l'animation du coeur reste en place apres un click **/
   position: absolute;
-  /** on met l'input en position absolute pour le positionné sur le coeur **/
   width: 2rem;
-  /** On ajoute une taille pour que l'input prenne tout le coeur **/
   height: 2rem;
   opacity: 0;
-  /** on ajoute une opacity de 0 pour faire disparaître l'input visuellement **/
   cursor: pointer;
   z-index: 3;
-  /** on ajoute un z-index de 3 pour que celui-ci soit positionner au dessus du coeur pour ne pas gêner le click **/
 }
 .restaurants .card-icon input:checked ~ .far {
   transition-duration: 0.5s;

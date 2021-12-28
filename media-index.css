@@ -1,8 +1,4 @@
 @media screen and (min-width: 950px) {
-  header {
-    font-size: 1.5rem;
-  }
-
   .functioning {
     flex-direction: row;
     align-items: center;

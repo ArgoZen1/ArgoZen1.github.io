@@ -6,29 +6,29 @@ $secondary: #FF79DA;
 $tertiary: #99E2D0;
 
 .loader {
-    position: fixed; //on fixe le loader par rapport au fond
-    height: 100%; // pour que ça prenne toute la page (width + height)
+    position: fixed; 
+    height: 100%; 
     width: 100%;
     display: flex;
-    justify-content: center; // on utilise flexbox pour centrer l'élément 
+    justify-content: center;  
     align-items: center;
-    animation: loader; // on ajoute une animation avec la règle keyframe 
-    animation-delay: 2s; // l'animation va durer 2 secondes en début de page
-    animation-fill-mode: both; // l'animation va disparaître à la fin
+    animation: loader;  
+    animation-delay: 2s; 
+    animation-fill-mode: both; 
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 30;  // Pour que l'animation apparaisse bien au dessus de tous les éléments 
+    z-index: 30;  
 }
 .circle {
-    width: 200px; // on fixe une taille à notre div
+    width: 200px; 
     height: 200px;
-    border: 0px solid transparent; //on lui met une bordure  
-    border-radius: 50%; // le carré est maintenant un cercle
-    position: absolute; // pour que les éléments se positionnent les uns sur les autres   
+    border: 0px solid transparent;   
+    border-radius: 50%; 
+    position: absolute;    
 }
-.circle:nth-child(1) { // on utilise "nth-child" pour cibler un seul élément 
-    border-bottom-width: 8px; // on fixe une taille sur la bordure du bas
-    border-color: $secondary; // on ajoute une couleur à cette bordure
-    animation: rotate1 2s linear infinite; // l'animation a lieu sans temps d'arrêt 
+.circle:nth-child(1) {  
+    border-bottom-width: 8px; 
+    border-color: $secondary; 
+    animation: rotate1 2s linear infinite; 
 }
 .circle:nth-child(2) {
     border-right-width: 8px;
@@ -40,13 +40,13 @@ $tertiary: #99E2D0;
     border-color: $tertiary;
     animation: rotate3 2s linear infinite;
 }
-@keyframes loader { // à la fin de l'animation 
+@keyframes loader {  
     100% {
-        opacity: 0; // pour que le loader disparaisse 
-        z-index: -5; // Pour que celui-ci passe en dessous des éléments de la page
+        opacity: 0; 
+        z-index: -5; 
     }
 }
-@keyframes rotate1 { // Pour que l'animation passe de 0 à 360 deg 
+@keyframes rotate1 { 
     0% {
        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);  
     }
@@ -86,16 +86,34 @@ a {
     text-decoration: none;
     color: white;
 }
+header {
+    h1 {
+        font-size: 3rem;
+    }
+}
 .headerFirstBlock { // Premier bloc (Paris,Belleville)
     display: flex; // on aligne l'icone et "Paris,Belleville"
     align-items: center;
     background-color: #eaeaea;
-    justify-content: center; // pour centrer le texte au milieu du bloc
+    justify-content: center;
+    font-size: 1.5rem;
+     
     box-shadow : inset 0px 5px 5px -5px  rgb(165, 162, 162);
     color: #4b4b4b;
     font-weight: bold;
-    i {
-       margin-right: 13px;
+    input {
+        
+        width: 10rem;
+        border: none;
+        background: transparent;
+        padding: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 8px;
+        &::placeholder {
+            color: #4b4b4b;
+            text-align: center;
+        }   
     }    
 }
 header  { // Du Titre ohmyfood jusqu'au bouton
@@ -111,8 +129,8 @@ header  { // Du Titre ohmyfood jusqu'au bouton
         @include button;
         margin-top: 10px;
         &:hover {
-            filter: brightness(1.1); // pour éclaircir le bouton
-            box-shadow: 4px 4px 10px rgb(0 0 0 / 45%); // La couleur noire à 45% d'opacité
+            filter: brightness(1.1); 
+            box-shadow: 4px 4px 10px rgb(0 0 0 / 45%); 
         }      
     }
     h3 { // Réservez le menu qui vous convient
@@ -187,7 +205,7 @@ header  { // Du Titre ohmyfood jusqu'au bouton
             position: absolute;
             right: 25px;
             top: 20px;
-            z-index: 6; // Pour qu'il se positionne au dessus de l'image dans la carte
+            z-index: 6; 
             background-color: $tertiary;
             color: #30a386;
             font-weight: bold;
@@ -211,46 +229,46 @@ header  { // Du Titre ohmyfood jusqu'au bouton
     }
     .card-body { 
         display: flex; 
-        height: 90px; // On met une hauteur pour que le coeur fonctionne avec flex-wrap: wrap
+        height: 90px; 
         flex-direction: column;
         justify-content: center;
         align-content: space-between;
         align-items: flex-start; 
-        flex-wrap: wrap; // Pour que le coeur se positionne à droite des elements
+        flex-wrap: wrap; 
         box-sizing: border-box; 
     }
     .fas {
         overflow: hidden;
-        position: absolute; // pour mettre le coeur dans le deuxieme coeur
-        opacity: 0; /** pour rendre visible le coeur seulement au click sur l'input **/
+        position: absolute; 
+        opacity: 0; 
         margin-top: 0.7px;
         margin-left: 0.7px;
         transition: 0.6s;
         transform: scale(1.1);
-        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));/*ON DEFINI UN BACKGROUND*/
-        background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE*/
-        -webkit-background-clip: text;/*ON MET LE BACKGROUND SUR LE TEXTE */
-        -webkit-text-fill-color: transparent;/*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT**/
+        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     } 
     .card-icon {
         padding: 5px;
         font-size: 1.6rem;
         margin-right: 15px;
-        position: relative;
-        input { /** On ajoute l'input pour que l'animation du coeur reste en place apres un click **/ 
-            position: absolute; /** on met l'input en position absolute pour le positionné sur le coeur **/
-            width: 2rem; /** On ajoute une taille pour que l'input prenne tout le coeur **/
+        position: relative; 
+        input { 
+            position: absolute; 
+            width: 2rem; 
             height: 2rem;
-            opacity: 0; /** on ajoute une opacity de 0 pour faire disparaître l'input visuellement **/
+            opacity: 0; 
             cursor: pointer;
-            z-index: 3; /** on ajoute un z-index de 3 pour que celui-ci soit positionner au dessus du coeur pour ne pas gêner le click **/    
+            z-index: 3;    
         }
-        /*QUAND LA CHECKBOX EST CHECK*/
+        
         input:checked ~ .far  {
             transition-duration: 0.5s;
             opacity: 0;
         }  
-        /*QUAND LA CHECKBOX EST CHECK*/
+        
         input:checked ~ .fas {
             transition-duration: 0.5s;
             opacity: 1;
